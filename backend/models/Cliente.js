@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize')
 const db = require('../db/conn')
 
-const Cliente = db.define('cliente',{
+const Cliente = db.define('cliente',{  // .define -> modelar a tabela como classe
     codCliente:{
         type: DataTypes.INTEGER,
         primaryKey: true,
@@ -9,7 +9,7 @@ const Cliente = db.define('cliente',{
     },
     nome: {
         type: DataTypes.STRING(40),
-        allowNull: false
+        allowNull: false // allowNull -> não deixa o o campo como nulo = Not NULL no banco de dados
     },
     altura: {
         type: DataTypes.FLOAT,
@@ -20,7 +20,7 @@ const Cliente = db.define('cliente',{
         allowNull: false
     }
 },{
-    timestamps: false,
+    timestamps: false, // timestamps: false -> obrigatório para não criar os campos createdAt e updatedAt do Sequelize
     tableName: 'clientes'
 })
 module.exports = Cliente

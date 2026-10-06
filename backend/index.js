@@ -15,11 +15,11 @@ app.use(cors())
 // -----------------------------
 
 
-app.post('/cliente', clienteController.cadastrar)
+app.post('/cliente', clienteController.cadastrar) // rota cadastrar cliente
 
 
 app.get('/', (req,res)=>{
-    res.status(200).json({message: "Aplicação Rodando"})
+    res.status(200).json({message: "Aplicação Rodando"}) // rota raiz da aplicação
 })
 
 // ---------- Sever -------------
